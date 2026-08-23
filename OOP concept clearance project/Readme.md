@@ -37,11 +37,6 @@ The project allows users to create bank accounts, deposit and withdraw money, tr
 * Default overdraft limit: **₹10,000**
 * Allows withdrawals using the overdraft limit
 
-### 3. Premium Savings Account
-
-* Inherits from `SavingsAccount`
-* Interest rate: **6%**
-* Provides its own withdrawal implementation
 
 ---
 
@@ -114,26 +109,6 @@ Bank Management System
 The project uses Python's built-in `abc` module for abstraction and `datetime` for recording transaction timestamps.
 
 ---
-
-## ▶️ How to Run
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-```
-
-### 2. Open the project folder
-
-```bash
-cd Bank-Management-System
-```
-
-### 3. Run the Python file
-
-```bash
-python "Bank management system.py"
-```
 
 ---
 
