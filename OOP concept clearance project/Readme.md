@@ -68,9 +68,6 @@ Bank Management System/
 ├── Bank management system.py
 └── README.md
 ```
-
----
-
 ## 🔄 System Flow
 
 ```text
@@ -98,9 +95,6 @@ Bank Management System
   │
   └── Exit
 ```
-
----
-
 ## ⚙️ Requirements
 
 * **Python 3.x**
@@ -110,7 +104,6 @@ The project uses Python's built-in `abc` module for abstraction and `datetime` f
 
 ---
 
----
 
 ## 🖥️ Main Menu
 
