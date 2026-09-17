@@ -51,12 +51,7 @@ class Account(ABC):
 
         self.balance += amount
 
-        self.transiction.append(
-            "{0} | Deposit | Rs. {1}".format(
-                datetime.now().strftime("%d-%m-%Y %I:%M %p"),
-                amount
-            )
-        )
+        self.transiction.append("{0} | Deposit | Rs. {1}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),amount))
 
         print("\nAmount deposited successfully.")
         print("Current Balance : Rs.", self.balance)
@@ -106,34 +101,18 @@ class SavingsAccount(Account):
         else:
             self.balance -= amount
 
-            self.transiction.append(
-                "{0} | Withdraw | Rs. {1}".format(
-                    datetime.now().strftime(
-                        "%d-%m-%Y %I:%M %p"
-                    ),
-                    amount
-                )
-            )
+            self.transiction.append("{0} | Withdraw | Rs. {1}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),amount))
 
             print("\nAmount withdrawn successfully.")
             print("Current Balance : Rs.", self.balance)
 
     def add_interest(self):
 
-        interestamount = (
-            self.balance * self.interest_rate / 100
-        )
+        interestamount = (self.balance * self.interest_rate / 100)
 
         self.balance += interestamount
 
-        self.transiction.append(
-            "{0} | Interest | Rs. {1}".format(
-                datetime.now().strftime(
-                    "%d-%m-%Y %I:%M %p"
-                ),
-                interestamount
-            )
-        )
+        self.transiction.append("{0} | Interest | Rs. {1}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),interestamount))
 
     def account_type(self):
         return "Savings Account"
@@ -165,89 +144,28 @@ class CurrentAccount(Account):
 
             self.balance -= amount
 
-            self.transiction.append(
-                "{0} | Withdraw | Rs. {1}".format(
-                    datetime.now().strftime(
-                        "%d-%m-%Y %I:%M %p"
-                    ),
-                    amount
-                )
-            )
-
+            self.transiction.append("{0} | Withdraw | Rs. {1}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),amount))
+          
             print("\nAmount withdrawn successfully.")
             print("Current Balance : Rs.", self.balance)
 
-        elif amount <= (
-            self.balance + self.overdraft_limit
-        ):
+        elif amount <= (self.balance + self.overdraft_limit):
 
             extra_amount = amount - self.balance
             self.balance -= amount
             self.overdraft_limit -= extra_amount
 
-            self.transiction.append(
-                "{0} | Withdraw | Rs. {1}".format(
-                    datetime.now().strftime(
-                        "%d-%m-%Y %I:%M %p"
-                    ),
-                    amount
-                )
-            )
-
+            self.transiction.append("{0} | Withdraw | Rs. {1}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),amount))
+          
             print("\nAmount withdrawn successfully.")
             print("Current Balance : Rs.", self.balance)
-            print(
-                "Remaining Overdraft Limit : Rs.",
-                self.overdraft_limit
-            )
+            print("Remaining Overdraft Limit : Rs.",self.overdraft_limit)
 
         else:
             print("\nAmount exceeds overdraft limit.")
 
     def account_type(self):
         return "Current Account"
-
-
-class PremiumSavingsAccount(SavingsAccount):
-
-    def __init__(
-        self,
-        account_number,
-        account_holder,
-        balance,
-        interest_rate
-    ):
-        super().__init__(
-            account_number,
-            account_holder,
-            balance,
-            interest_rate
-        )
-
-    def withdraw(self, amount):
-
-        if amount <= 0:
-            print("\nInvalid amount.")
-
-        elif self.balance < amount:
-            print("\nInsufficient balance.")
-
-        else:
-            self.balance -= amount
-
-            self.transiction.append(
-                "{0} | Premium Withdraw | Rs. {1}".format(
-                    datetime.now().strftime(
-                        "%d-%m-%Y %I:%M %p"
-                    ),
-                    amount
-                )
-            )
-
-            print("\nAmount withdrawn successfully.")
-            print("Current Balance : Rs.", self.balance)
-
-   
 
 
 class Bank:
@@ -299,26 +217,10 @@ class Bank:
         sender.balance -= amount
         receiver.balance += amount
 
-        sender.transiction.append(
-            "{0} | Transfer to {1} | Rs. {2}".format(
-                datetime.now().strftime(
-                    "%d-%m-%Y %I:%M %p"
-                ),
-                receiver.account_number,
-                amount
-            )
-        )
-
-        receiver.transiction.append(
-            "{0} | Transfer from {1} | Rs. {2}".format(
-                datetime.now().strftime(
-                    "%d-%m-%Y %I:%M %p"
-                ),
-                sender.account_number,
-                amount
-            )
-        )
-
+        sender.transiction.append( "{0} | Transfer to {1} | Rs. {2}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),receiver.account_number,amount))
+    
+        receiver.transiction.append("{0} | Transfer from {1} | Rs. {2}".format(datetime.now().strftime("%d-%m-%Y %I:%M %p"),sender.account_number,amount))
+    
         print("\nMoney transferred successfully.")
         print("Sender Balance   : Rs.", sender.balance)
         print("Receiver Balance : Rs.", receiver.balance)
@@ -327,10 +229,8 @@ class Bank:
         return len(self.customers)
 
     def count_no_accounts(self):
-        print(
-            "\nTotal Accounts :",
-            Account.get_total_accounts()
-        )
+        print("\nTotal Accounts :",Account.get_total_accounts())
+        
 
     def create_account(self):
 
@@ -342,59 +242,34 @@ class Bank:
         age = int(input("Enter customer age     : "))
         address = input("Enter customer address : ")
 
-        customer_id = "CUST" + str(
-            len(self.customers) + 1
-        )
+        customer_id = "CUST" + str(len(self.customers) + 1)
 
-        customer = Customer(
-            name,
-            age,
-            address,
-            customer_id
-        )
-
-        account_number = input(
-            "Enter 10 digit account number : "
-        )
+        customer = Customer(name,age,address,customer_id)
+        account_number = input("Enter 10 digit account number : ")
 
         while True:
 
-            if not Account.validate_account_number(
-                account_number
-            ):
-                print(
-                    "Invalid account number. "
-                    "Enter exactly 10 digits."
-                )
+            if not Account.validate_account_number(account_number):
+        
+                print("Invalid account number. ""Enter exactly 10 digits.")
 
-                account_number = input(
-                    "Enter account number : "
-                )
+                account_number = input("Enter account number : ")
 
-            elif self.find_account(
-                account_number
-            ) is not None:
+            elif self.find_account(account_number) is not None:
 
                 print("Account number already exists.")
 
-                account_number = input(
-                    "Enter another account number : "
-                )
+                account_number = input("Enter another account number : ")
 
             else:
                 break
 
         print("\n1. Savings Account")
         print("2. Current Account")
-        print("3. Premium Savings Account")
 
-        choice = input(
-            "\nEnter account type : "
-        )
+        choice = input("\nEnter account type : ")
 
-        balance = float(
-            input("Enter initial balance : Rs. ")
-        )
+        balance = float( input("Enter initial balance : Rs. "))
 
         if balance < 0:
             print("\nBalance cannot be negative.")
@@ -416,15 +291,6 @@ class Bank:
                 customer,
                 balance,
                 10000
-            )
-
-        elif choice == "3":
-
-            account = PremiumSavingsAccount(
-                account_number,
-                customer,
-                balance,
-                6
             )
 
         else:
@@ -453,9 +319,7 @@ class Bank:
         print("                    DEPOSIT MONEY")
         print("=" * 55)
 
-        account_number = input(
-            "Enter account number : "
-        )
+        account_number = input("Enter account number : ")
 
         account = self.find_account(account_number)
 
@@ -463,9 +327,7 @@ class Bank:
             print("\nAccount not found.")
             return
 
-        amount = float(
-            input("Enter amount to deposit : Rs. ")
-        )
+        amount = float(input("Enter amount to deposit : Rs. "))
 
         account.deposit(amount)
 
@@ -475,19 +337,15 @@ class Bank:
         print("                   WITHDRAW MONEY")
         print("=" * 55)
 
-        account_number = input(
-            "Enter account number : "
-        )
-
+        account_number = input("Enter account number : ")
+ 
         account = self.find_account(account_number)
 
         if account is None:
             print("\nAccount not found.")
             return
 
-        amount = float(
-            input("Enter amount to withdraw : Rs. ")
-        )
+        amount = float(input("Enter amount to withdraw : Rs. "))
 
         account.withdraw(amount)
 
@@ -497,9 +355,7 @@ class Bank:
         print("                    CHECK BALANCE")
         print("=" * 55)
 
-        account_number = input(
-            "Enter account number : "
-        )
+        account_number = input("Enter account number : ")
 
         account = self.find_account(account_number)
 
@@ -519,9 +375,7 @@ class Bank:
         print("                     ACCOUNT STATEMENT")
         print("=" * 65)
 
-        account_number = input(
-            "Enter account number : "
-        )
+        account_number = input("Enter account number : ")
 
         account = self.find_account(account_number)
 
@@ -588,17 +442,11 @@ while True:
 
     elif choice == "4":
 
-        accountself = input(
-            "Enter sender account number   : "
-        )
+        accountself = input("Enter sender account number   : ")
 
-        account_num = input(
-            "Enter receiver account number : "
-        )
+        account_num = input("Enter receiver account number : ")
 
-        amount = float(
-            input("Enter amount to transfer     : Rs. ")
-        )
+        amount = float(input("Enter amount to transfer     : Rs. ") )
 
         bank1.transfer(
             accountself,
@@ -620,7 +468,7 @@ while True:
 
     elif choice == "8":
 
-        print("\nThank you for using Bank Management System.")
+        print("\nThank you for trusting STATE BANK OF INDIA and securing your money with us . Have a nice day !")
         break
 
     else:
