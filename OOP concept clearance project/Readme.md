@@ -1,4 +1,4 @@
-# 🏦 Bank Management System
+# 🏦 Bank Management System :
 
 A **console-based Bank Management System** developed in Python using **Object-Oriented Programming (OOP)** concepts.
 
@@ -29,7 +29,7 @@ The project allows users to create bank accounts, deposit and withdraw money, tr
 
 * Interest rate: **4%**
 * Supports deposits and withdrawals
-* Provides an interest calculation feature
+* Provides interest calculation
 
 ### 2. Current Account
 
@@ -47,8 +47,6 @@ The project allows users to create bank accounts, deposit and withdraw money, tr
 
 ## 🧩 OOP Concepts Used
 
-This project demonstrates several important Python OOP concepts:
-
 | OOP Concept                 | Implementation                                     |
 | --------------------------- | -------------------------------------------------- |
 | **Class & Object**          | `Person`, `Customer`, `Account`, `Bank`            |
@@ -60,8 +58,6 @@ This project demonstrates several important Python OOP concepts:
 | **Class Method**            | `get_total_accounts()`                             |
 | **Static Method**           | `validate_account_number()`                        |
 | **Composition/Aggregation** | `Bank` manages customers and accounts              |
-
-The `Account` class maintains the account balance through a property and setter, while its `withdraw()` method is abstract.
 
 ---
 
@@ -90,17 +86,11 @@ Bank Management System
   │       └── Account Type
   │
   ├── Deposit Money
-  │
   ├── Withdraw Money
-  │
   ├── Transfer Money
-  │
   ├── Check Balance
-  │
   ├── Print Statement
-  │
   ├── View Total Accounts
-  │
   └── Exit
 ```
 
@@ -111,35 +101,11 @@ Bank Management System
 * **Python 3.x**
 * No external libraries are required.
 
-The project uses Python's built-in `abc` module for abstraction and `datetime` for recording transaction timestamps.
-
----
-
-## ▶️ How to Run
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-```
-
-### 2. Open the project folder
-
-```bash
-cd Bank-Management-System
-```
-
-### 3. Run the Python file
-
-```bash
-python "Bank management system.py"
-```
+The project uses Python's built-in `abc` module for abstraction and `datetime` for transaction timestamps.
 
 ---
 
 ## 🖥️ Main Menu
-
-When the program starts, the following menu is displayed:
 
 ```text
 =======================================================
@@ -170,8 +136,6 @@ Example:
 23-08-2026 09:00 PM | Transfer to 1234567890 | Rs. 2000
 ```
 
-The transaction history is displayed through the **Account Statement** option.
-
 ---
 
 ## 🔐 Account Validation
@@ -182,7 +146,7 @@ The system validates account numbers to ensure that they:
 * Are numeric
 * Are not already registered
 
-This validation is implemented using a static method.
+The account number validation is implemented using a static method.
 
 ---
 
@@ -190,7 +154,7 @@ This validation is implemented using a static method.
 
 ### `Person`
 
-Stores basic personal information:
+Stores:
 
 * Name
 * Age
@@ -198,7 +162,7 @@ Stores basic personal information:
 
 ### `Customer`
 
-Inherits from `Person` and additionally stores a customer ID.
+Inherits from `Person` and stores a customer ID.
 
 ### `Account`
 
@@ -220,7 +184,7 @@ Provides an overdraft facility.
 
 ### `PremiumSavingsAccount`
 
-Extends `SavingsAccount` with a premium savings account implementation.
+Extends `SavingsAccount` with premium savings functionality.
 
 ### `Bank`
 
@@ -237,45 +201,11 @@ Manages:
 
 ---
 
-## 📝 Example Operations
-
-### Deposit
-
-```text
-Enter account number : 1234567890
-Enter amount to deposit : Rs. 5000
-
-Amount deposited successfully.
-Current Balance : Rs. 15000
-```
-
-### Withdraw
-
-```text
-Enter account number : 1234567890
-Enter amount to withdraw : Rs. 2000
-
-Amount withdrawn successfully.
-Current Balance : Rs. 13000
-```
-
-### Transfer
-
-```text
-Enter sender account number   : 1234567890
-Enter receiver account number : 9876543210
-Enter amount to transfer     : Rs. 3000
-
-Money transferred successfully.
-```
-
----
-
 ## 🎯 Purpose of the Project
 
-This project was created to demonstrate the practical implementation of **Object-Oriented Programming in Python** through a real-world banking application.
+This project demonstrates the practical implementation of **Object-Oriented Programming in Python** through a real-world banking application.
 
-It is suitable for learning and demonstrating:
+It demonstrates:
 
 * Python classes and objects
 * Inheritance
@@ -285,7 +215,7 @@ It is suitable for learning and demonstrating:
 * Class methods
 * Static methods
 * Object relationships
-* Basic transaction management
+* Transaction management
 
 ---
 
@@ -311,8 +241,4 @@ Possible improvements include:
 
 Computer Engineering Student
 
----
 
-## 📄 License
-
-This project is created for **educational and academic purposes**.
