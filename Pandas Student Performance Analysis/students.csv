@@ -1,0 +1,34 @@
+id,name,age,gender,city,course,maths,python,pandas,numpy,attendance,percentage,joining_date,grade
+1,Raj,21,Male,Rajkot,Python,78,85,82,75,92,85,2026-01-10,A
+2,Priya,20,Female,Ahmedabad,Data Science,88,91,86,89,95,72,2026-01-15,A
+3,Dev,22,Male,Surat,AI,72,80,78,85,88,56,2026-01-20,B
+4,Anjali,19,Female,Baroda,Machine Learning,90,92,89,91,97,70,2026-01-25,C
+5,Arjun,23,Male,Gandhinagar,Deep Learning,85,87,90,88,93,90,2026-01-30,A
+6,Meera,21,Female,Rajkot,Python,80,83,85,82,90,86,2026-02-05,A
+7,Neha,20,Female,Ahmedabad,Data Science,92,95,90,94,98,81,2026-02-10,C
+8,Rahul,22,Male,Surat,AI,75,78,80,85,97,,2026-02-15,B
+9,Ananya,19,Female,Baroda,Machine Learning,88,90,87,89,,52,2026-02-20,B
+10,Varun,,Male,Gandhinagar,Deep Learning,82,85,88,84,91,20,2026-02-25,B
+11,Simran,21,Female,Rajkot,Python,79,82,84,80,89,10,2026-03-02,A
+12,Aditya,20,Male,Ahmedabad,Data Science,90,93,88,92,94,5,2026-03-07,A
+13,Shreya,22,Female,Surat,AI,76,79,81,78,87,90,2026-03-12,A
+14,Kabir,19,Male,Baroda,Machine Learning,91,94,90,93,99,70,2026-03-17,A
+15,Anika,23,Female,Gandhinagar,Deep Learning,84,86,89,85,92,73,2026-03-22
+16,Rohan,21,Male,Rajkot,Python,77,80,83,79,88,71,2026-03-27,C
+17,Sanya,20,Female,Ahmedabad,Data Science,89,92,87,90,95,40,2026-04-01,B
+18,Vihaan,22,Male,Surat,AI,74,77,79,76,84,94,2026-04-06,A
+19,Myra,19,Female,Baroda,Machine Learning,92,95,91,94,98,56,2026-04-11,B
+20,Aarav,23,Male,,Deep Learning,83,85,88,86,90,90,2026-04-16,B
+21,Diya,21,Female,Rajkot,Python,81,84,86,83,91,70,2026-04-21,C
+22,Krishna,20,Male,Ahmedabad,Data Science,87,90,85,88,93,45,2026-04-26,C
+23,Anvi,22,Female,Surat,AI,73,76,78,75,86,78,2026-05-01,C
+24,Reyansh,19,Male,Baroda,Machine Learning,90,93,88,91,97,56,2026-05-04,B
+25,Mehul,23,Male,Gandhinagar,Deep Learning,82,84,87,83,89,23,2026-05-06,A
+26,Kiara,21,Female,Rajkot,,80,83,85,81,90,84,2026-05-11,B
+27,Aarohi,20,Female,Ahmedabad,Data Science,91,94,89,92,97,69,2026-05-16,C
+28,Devansh,22,Male,Surat,AI,75,78,80,77,85,47,2026-05-21,A
+29,Prisha,19,Female,Baroda,Machine Learning,89,92,87,90,95,58,2026-05-26,A
+30,Advik,23,Male,Gandhinagar,Deep Learning,84,86,89,85,91,67,2026-05-31,B
+15,Anika,23,Female,Gandhinagar,Deep Learning,84,86,89,85,92,60,2026-03-22,B
+7,Neha,20,Female,Ahmedabad,Data Science,92,95,90,94,98,82,2026-02-10,A
+10,Varun,,Male,Gandhinagar,Deep Learning,82,85,88,84,91,94,2026-02-25,A
