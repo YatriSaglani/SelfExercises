@@ -47,9 +47,9 @@ joining_date
 ### Example Record
 
 ```text
-1, Raj, 21, Male, Rajkot, Python, 78, 85, 82, 75, 92, 2026-01-10
+1,Raj,21,Male,Rajkot,Python,78,85,82,75,92,2026-01-10
 ```
-
+Do not add the spaces before/after comma [,].
 The project also requires additional datasets for Merge and Join operations:
 
 ### `fees.csv`
